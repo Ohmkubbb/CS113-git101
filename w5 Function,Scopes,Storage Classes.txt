@@ -1,0 +1,24 @@
+Week 5
+Scope Rules
+    ตัวแปรของ Function นั้นจะมีขอบเขตการใช้งาน โดยแบ่งได้ 2 แบบ
+1.Local Variables
+    เป็นตัวแปรที่ถูกประกาศ หรือ ส่งเข้ามาใน Function ใช้งานได้แค่ใน Function เท่านั้น
+2.Global Variables
+    เป็นตัวแปรที่ถูกประกาศนอก Function
+    * ถ้ามีตัวแปรชื่อเดียวกันใน local ตัว local และ global จะเป็นตัวแปรที่ไม่เกี่ยวข้องกัน ไม่ทำให้ค่า global เปลี่ยนไป
+
+Storage Classes
+    เราสามารถกำหนด Storage Classes ให้กับตัวแปร ได้ 4 ลักษณะผ่าน keywords auto,register,extern และ static
+โดยแบ่งออกเป็น 2 Storage duration 
+1.automatic storage duration
+    ก็คือ keyword auto และ register โดย auto นั้นจะเป็นการกำหนดการจัดเก็บตัวแปร ให้เมื่อสื้นสุด block ที่ตัวแปรนี้ถูกทำงาน ก็จะถูกลบออกจาก memory 
+ส่วน register นั้นเป็นการเก็บค่าตัวแปรที่จะกำหนดไว้ใน register เพื่อให้สามารถเรียกใช้ได้รวดเร็วขึ้น
+2.static storage duration
+    extern และ static โดย static นั้น จะเก็บค่าของข้อมูลตั้งแต่โปรแกรมเริ่มทำงาน จนถึงเมื่อโปรแกรมสิ้นสุดลง
+    *หาก ตัวแปร local ถูกกำหนดด้วย static จะยังคงใช้งานได้แค่เพียงภายใน Function แต่ memory จะยังอยู่หลังจากสิ้นสุด Function ไปแล้ว
+ตัวแปร Global และ ชื่อ Function จะถูกกำหนดเป็น extern โดย default
+
+Random Number Generator 
+    เป็น Function ที่อยู่ใน C standard library (<stdlib.h>) ก็คือ rand() เป็นการสุ่มตัวเลข
+โดยชุดตัวเลขที่ถูกสุ่มออกมานั้นจะเป็นชุดการสุ่มเดียวกัน (seed เดียวกัน) ทำให้หากเราต้องการที่จะให้สุ่ม seed ใหม่ทุกครั้ง ให้ใช้ Function time() (เรียกใช้ <time.h>)
+
