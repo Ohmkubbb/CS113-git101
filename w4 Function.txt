@@ -1,0 +1,45 @@
+Week 4
+Function
+    คือ การสร้างฟังก์ชั่นขึ้นมา เพื่อใช้ในโค้ดโดยไม่ต้องเขียนใหม่ จะมีรูปแบบการนิยามดังนี้
+* Function นั้นจะรับค่า พารามิเตอร์,ส่งค่ากลับ หรือไม่ก็ได้
+type name (parameter1, parameter2, ...)
+{
+    statements;
+    return statements;
+}
+type = ประเภทข้อมูลของ Function
+name = ชื่อของ Function
+parameter1,2 = ตัวแปรที่ถูกส่งมาให้กับ Function
+statements = คำสั่งของโปรแกรม
+return = เมื่อโปรแกรมทำงานไปเจอ return โปรแกรมจะกลับไปยังจุดที่ Function เรียกใช้ และคืนค่าที่ return กลับมา
+
+Standard Library Functions and Math Library Functions
+    เป็น Function ที่ถูกสร้างเอาไว้ โดยจะใช้ได้นั้นจะต้อง #include ฟังก์ชั่น นั้นๆก่อน
+เช่น printf(),put() นั้นเป็นส่วนหนึ่งของ Standard Library Function (stdio.h)
+sqrt(),fmod() เป็นส่วนหนึ่งของ Math Library Function (math.h)
+
+Recursion 
+    เป็น Function ที่เรียกใช้ตนเองได้
+ex. Function แปลงเลขฐาน 10 เป็น ฐาน 2
+int bit(int n)
+{
+    if (n<2)
+    {
+        if (n == 1)
+            return printf("1");
+        else
+            return printf("0");
+    }
+    else
+    {   
+        return bit(n/2),printf("%d",n%2); // มีการเรียกใช้ตัวเอง ในบรรทัดนี้
+    }
+}
+
+Function Call and Stack Frames
+-Function นั้นจะมีการจัดการทำ stack frame เพื่อใช้ในการัจดการเก็บข้อมูลของตัวแปร parameter และ ตัวแปร local ที่อย่ภายใต้ Function
+-stack frame จะถูกสร้างขึ้นต่อเมื่อ Function ถูกเรียกใช้งาน
+-return address นั้นเป็นตำแหน่งของคำสั่งที่ทำงานหลังจาก Function ทำงานจนเสร็จ
+-เมื่อเจอคำสั่ง return หรือ Function ทำงานจนเสร็จ stack frame นั้นจะถูกทำลาย
+
+
