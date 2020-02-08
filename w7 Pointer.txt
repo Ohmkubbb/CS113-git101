@@ -1,0 +1,46 @@
+Week 7
+Pointers and Addresses
+-ในภาษาซีนั้นเราสามารถ จัดการกับหน่วยความจำได้ โดยผ่าน Pointers
+-Pointer คือตัวแปรที่เก็บค่า address ในหน่วยความจำ
+-โดย address เริ่มจาก 0
+
+ex.
+
+int c = 5;
+int *p; // เป็นการประกาศ p เป็นตัวแปร pointer ด้วยเครื่องหมาย *
+
+p = &c; // p จะชี้ไปที่ตำแหน่งของ ตัวแปร c
+
+Operators
+    โดย pointer จะมี operator อีก 2 ตัว ก็คือ
+1. & (address operator) เป็น unary operator 
+    เป็น operator ที่ใช้หาตำแหน่งในหน่วยความจำของ operand
+2. * (dereferencing operator) เป็น unary operator 
+    เป็น operator ที่ใช้ในการเข้าถึงข้อมูลที่อยู่ในตำแหน่งในหน่วยความจำของ operand
+
+scanf()
+    เป็นการรับข้อมูลเข้ามาในโปรแกรมผ่าน standard input
+ex.
+int input;
+sacnf("%d",&input); // รับค่าจาก stdin เก็บเข้าไปในตำแหน่งของ ตัวแปร input
+
+Pointer and Array
+    Array นั้นจะให้ค่าตำแหน่งที่หน่วยความจำ คือ ข้อมูลตัวแรกของ Array
+ทำให้ a และ &a[0] มีค่าเท่ากัน และ *(a+i) กับ a[i] ด้วย
+
+Call by Reference
+    ในภาษาซีนั้น การส่งค่านั้นเป็น pass by value ทั้งหมด ทำให้เราต้องจำลองการส่งค่าแบบ pass by reference โดยใช้ pointer
+
+Pointers to Functions
+-เราสามารถอ้างไปยัง หน่วยความจำของ Functions ได้
+-โดยปกติ Functions จะให้ค่า base address อยู่แล้ว
+ex. double(*pfunc)(int, float) // เป็นการเก็บ base address ของ Functions ด้วยตัวแปร pfunc
+
+malloc and free
+-malloc() เป็นการจองพื้นที่ในหน่วยความจำ
+-โดย malloc จะเก็บอยู่ในส่วนของ heap segment
+-free() โดย parameter ของ free นั้นจะเป็นตำแหน่งในหน่วยความจำ ที่เราต้องการจจะคืนพื้นที่
+
+Segmentation fault
+-หากเราเข้าถึงหน่วยควาจำที่ไม่ได้จอง หรือ เกินขนาดที่กำหนดไว้ จะเกิดการ Segmentation fault
+-ทำให้เราควรที่จะหลีกเลี่ยง Segmentation fault โดยการรู้ขนาดของหน่วยความจำ ของข้อมูลของเรา
