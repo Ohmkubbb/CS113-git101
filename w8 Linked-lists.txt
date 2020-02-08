@@ -1,0 +1,37 @@
+Week 8
+Linked lists
+-Linked lists คือข้อมูลที่ใช้เก็บข้อมูล โดยผู้ใช้สามารถเข้าถึงข้อมูลแต่ละตัวได้
+
+Structure
+เป็นการกำหนดรูปแบบของข้อมูล รวบรวมไว้ในที่เก็บข้อมูล ซึ่งอาจจะประเภทเดียวกันหรือต่างกันก็ได้
+struct number {
+    int data;
+    int num;
+}
+
+การประกาศตัวแปร Structure
+struct number n; // n เป็นตัวแปรที่มีโครงสร้างตาม struct number
+โดยเราสามารถเข้าถึง field ของ structure ได้โดยใช้ dot operator
+ex.
+printf("%d",n.data);
+n.num = 10;
+
+เราสามารถประากศตัวแปรและกำหนดค่าเริ่มต้นได้
+struct example ex = {"6210451110", "Chanon Limvongrujirat", 19};
+
+Pointer
+เราสามาถนำ Pointer เข้ามาประยุกต์ใช้กับ Structure ได้ในลักษณะนี้
+ex.
+struct number n, *p_n;
+
+*p_n = &n;
+printf("%d",(*p_n).data);
+(*p_n).num = 10;
+
+โดย (*p_n). นั้นสามารถเขียนโดยใช้ arrow operator ได้ดังนี้ p_n->data
+
+typedef
+-เป็นการเพิ่ม keyword
+ex.
+typedef long long int lint;
+โค้ดข้างต้นหมายความว่าเราสามารถเขียน lint แล้ว จะได้เป็น type long long int นั้นเอง
