@@ -1,0 +1,101 @@
+Week 2
+1.Variable Name 
+ในภาษา C จะมีข้อกำหนดในการตั้งชื่อตั้งแปรดังนี้
+-ขึ้นต้นด้วย อักขระพิมพ์ใหญ่,พิมพ์เล็ก,ตัวเลข หรือ _
+-โดยตัวอักษรพิพม์ใหญ่และพิมพ์เล็กจะถือว่าเป็นคนละตัวกัน
+-ตัวแปรจะต้องไม่ตรงกับคำสงวน
+
+2.Data Types and Sizes
+ในภาษา C ต้องมีการกำหนดประเภทและขนาด ของข้อมูล ดังเช่น
+char = เป็นข้อมูล String เป็นประโยค หรือ หนึ่งคำ
+int = จำนวนเต็ม
+float,double = จำนวนจริง
+short ลดพื้นที่เก็บข้อมูล,long เพิ่มพื้นที่เก็บข้อมูล
+และยังมี signed และ unsigned ที่เป็นการกำหนดค่าว่ามีมีเครื่องหมายหรือไม่
+เราสามารถใช้ sizeof ในการดูตัวแปรและประเภทของข้อมูลได้
+โดยมีค่าดังนี้ 
+char = 1 byte
+int = 4 byte
+float = 4 byte
+double = 8 byte
+short = 2 byte
+long = 4 byte
+
+3.Constants
+คือ ตัวแปรที่ไม่สามารถนำไปเปลี่ยนแปลงค่าในภายหลังได้ เป็นค่าที่ถูกกำหนดพร้อมกับการประกาศตัวแปร และมีประเภทข้อมูล เหมือนกับประเภทข้อมูลทั่วไป เช่น int,float,char
+ex. 
+const int Constants = 123;
+const float PI = 3.14;
+การใส่ 0 ตามด้วยเลขของจำนวนเต็มเป็นการแสดงถึงเลขฐาน 8
+0x หรือ 0X บ่งบอกถึง ฐาน 16
+0b หรือ 0B บ่งบอกถึง ฐาน 2
+การ print format นั้นสามารถใช้ได้ทั้ง %o และ %x
+
+4.Declarations
+ในภาษาซีการจะใช้งานตัวแปรได้ ต้องมีการประกาศตัวแปรก่อน
+ในการประกาศตัวแปร เราจะต้องระบุประเภทข้อมูลของตัวแปร 
+ex.
+int number,hours;
+char name[40],c;
+4.1 printf() and puts()
+function printf และ puts นั้นจะใช้ได้ เราจะต้อง #include <stdio.h> สะก่อนถึงสามารถนำมาใช้งานได้
+ตัวอย่าง data typ ที่ใช้ในการ printf หรือ puts ของข้อมูล
+%d คือ integer 
+%6d คือ integer ที่มีความกว้าง 6 ตัวอักษร
+%06d คือ integer ที่มีความกว้าง 6 ตัวอักษร ซึ่งตัวอักษรที่ไม่มีจะใช้ 0 แทน
+%f คือ float
+%6f คือ float ที่มีความกว้าง 6 ตัวอักษร
+%.2f คือ float ที่มีทศนิยม 2 ตำแหน่ง
+%6.2f คือ float ที่มีความกว้าง 6 ตัวอักษร และ ทศนิยม 2 ตำแหน่ง
+*ประเภทข้อมูลอื่น ก็จะเรียกใช้แตกต่างกัน
+และยังมี data type อื่นๆ เช่น 
+%o คือ เลขฐาน 8
+%x คือ เลขฐาน 16
+%c คือ ตัวอักษร
+%s คือ String
+4.2 Character Input and Output
+getchar() เป็นการรับอักขระ 1 ตัวจาก standard input เข้ามาในโปรแกรม
+putchar() เป็นการส่งอักขระ 1 ตัวออกไปยัง standard output
+
+5.Arithmetic Operators
+จะมีด้วยกันดังนี้ +,-,*,/,%
+โดย % นั้นไม่สามารถใช้กับ float และ double ได้
+โดย + และ - นั้นสามารถเป็น unary operator (การดำเนินการที่กระทำกับ operand เพียงตัวเดียว)ได้
+โดยมี precedence ดังนี้ (มาก -> น้อย)
+unary +,- 
+*,/,%
++,- (binary operator)
+*หากมี precedence เท่ากัน จะคิดจากซ้ายไปขวา
+
+6.Relational Operators และ Logical Operators
+Relational Operators (การเปรียบเทียบค่าระหว่างตัวแปรสองตัว) = >,>=,<,<=,=,!= 
+Logical Operators (ตัวดำเนินการเปรียบเทียบสองค่า ผลลัพธ์เป็น True,False) = &&, ||, !
+
+7.Type Conversion
+คือการเปลี่ยนแปลงข้อมูลหนึ่งไปยังข้อมูลอีกชนิดหนึ่ง
+ex. 
+char <--> int
+logic <--> number ex. if (!valid) เป็น if (valid == 0)
+
+8.Increment and Decrement Operators
+i++,++i (ตัวแปร i + ด้วย 1)
+n--,--n (ตัวแปร n - ด้วย 1)
+
+9.Bitwise Operators
+& = AND
+| = Inclusive OR
+^ = Exclusive OR
+<< = left shift
+>> = right shift
+~ = one's complement
+
+10.Assignment Operators
+ex. 
+i = i + 1 ;
+c = d = getchar() ;
+
+11.Conditional Expression
+expression1 ? expression2 : expression3
+จากข้างบนจะได้ว่า expression 1 เป็นจริงหรือไม่ หากเป็นจริง ทำ expression 2 หากไม่จริง ทำ expression 3
+
+
