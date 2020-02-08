@@ -1,0 +1,55 @@
+Week 3
+1.Statement and blocks 
+ในภาษา C นั้นเราจะต้องใช้ ; (semi-colon) ในการปิดท้ายคำสั่ง เพื่อให้เป็น Statement
+และใช้ {} ในการกำหนด blocks เพื่อให้ง่ายต่อการอ่าน และ รวม Statement หลายๆอันเข้าด้วยกัน
+
+2.if,else,else if
+การใช้ if-else
+if (expression)
+{
+    statement1
+}
+โดย else นั้นจะสามารถใช้ได้หลังจากการใช้ if ไปแล้วเท่านั้นและจะคู่กับ if ที่ใกล้ที่สุด ใช้ ดังนี้
+else 
+{
+    statement2
+}
+ส่วน else if นั้นจะถูกใช้หลังจากใช้งาน if ไปแล้วเป็นการเช็ค หากมี expression ใดเป็นจริงก็จะทำงาน statement ของ expression นั้นๆ
+การใช้งาน else if
+if (expression)
+    statement1
+else if (expression2)
+    statement2
+else if (expression3)
+    statement3
+
+4.Switch
+เป็นการตรวจสอบเงื่อนไข ของ expression นั้นตรงกับ case ใด
+ex. 
+switch (expr)
+{
+    case const-expr:
+        statements
+    case const-expr:
+        statements
+    default: //default นั้นจะมีหรือไม่ก็ได้ จะทำงานเมื่อ ไม่มี case ใดทำงานเลย
+        statements
+}
+
+5.Loops
+ใช้ while , for , do-while ในการสร้างลูบ
+while (expr)
+    statement
+หาก expr เป็นจริง จะทำงานจนกว่า จะเป็นเท็จ
+for(expr1:expr2:expr3)
+    statement
+expr1 เป็นการกำหนดค่า expr2 เป็นการเปรียบเทียบค่า expr3 เป็นการกำหนด หรือ เพิ่มค่า/ลดค่า
+Do-while
+do
+    statement
+while (expr);
+ทำงานที่ statement แล้วเช็คค่า expr หากเป็นจริง statement จะทำงาน แล้ววนเช่นนี้ไปเรื่อยๆ
+
+โดยจะมีคำสั่ง Break และ Continue ที่จะนำมาใช้ใน loop
+break = ทำให้โปรแกรมหลุดออกจาก loop
+continue = ทำให้ลูบเกิดการวนซ้ำใหม่
