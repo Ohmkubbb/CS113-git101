@@ -1,0 +1,67 @@
+Week 9
+Branch
+1.สร้าง Branch
+    git branch ชื่อbranch
+ex. 
+git branch week9
+เป็นการสร้าง branch แยกออกจาก branch เดิม
+
+2.ตรวจสอบว่ามี branch ใดบ้าง
+    git branch
+ex. 
+git branch
+*master
+week9
+* คือการบอกว่ากำลังอยู่ใน branch ใด
+
+3.เปลี่ยน branch
+    git checkout ชื่อbranch
+ex.
+git checkout week9
+
+การ Merge Branch แบบไม่มี Conflict
+// เราจะสร้าง week9.txt ใน branch week9 และ master1.txt ใน branch master
+git checkout week9 //เข้า branch week9
+(เพิ่มไฟล์ week9.txt)
+git add week9.txt // add ไฟล์ week9.txt
+git commit -m "Add week9 in branch week9" //commit checkpoint
+
+git checkout master //เข้า branch master
+(เพิ่มไฟล์ master)
+git add master1.txt
+git commit -m "Add master1.txt in branch master"
+
+ทำการ push master และ feature
+git checkout master
+git push origin master
+git checkout week9
+git push origin week9
+
+ในการ merge เราจะต้องไปที่ branch ปลายทางที่ต้องการก่อน
+git checkout master
+git merge week9
+
+หากไม่มี conflict เกิดขึ้น git จะสร้าง commit ของการ merge 
+จากนั้นให้ push ขึ้นgithub
+git push origin master
+ถือว่า merge เสร็จสิ้น
+
+Pull ไม่มี Conflict
+ืเราจะทำการสร้าง user2 ขึ้นมา
+git clone <url> git102 // สร้าง folder git102 
+เพิ่มไฟล์ใหม่ใน git102
+git add new-1.txt
+git commit -m "add new-1.txt"
+git push origin master
+ให้กลับมา user เก่า ทำการ pull การเปลี่ยนแปลงที่ user2 ทำมาลงที่ local repository ด้วย
+git pull origin master
+
+การ Merge แบบมี Conflict
+จะเกิดขึ้นเมื่อมีการปรับแก้ไขข้อมูลในไฟล์เดียวกัน บรรทัดเดียวกัน ที่อยู่ต่าง branch กัน
+git จะสามารถข้อความอธิบาย conflict ในไฟล์ที่เกิด conflict ขึ้น
+ให้เราแก้ไขข้อมูล/เลือกข้อมูลที่ต้องการ 
+หลังจากนั้นก็ให้ทำการ commit และ push ตามปกติห
+
+การ Pull แบบมี Conflict
+จะเกิดขึ้นเมื่อมีข้อมูลมีการ commit ไฟล์เดิม แล้วเราไป pull ให้ทำการแก้ไขไฟล์นั้นจากนั้นให้ทำการอัพเดทด้วยการ commit และ push
+ในเครื่องอื่นนั้นจะเห็นว่ามี checkpoint ตามหลัง origin/master ให้ทำการ pull อีกครั้งจะไม่เกิด conflict เพราะถูกแก้ไขเรียบร้อยแล้ว
